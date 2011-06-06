@@ -1,0 +1,6 @@
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a " 
+nonblock 1
+defnonblock 1
+bind c screen 1 # Window numbering starts at 1, not 0.
