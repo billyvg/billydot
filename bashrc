@@ -1,4 +1,7 @@
-### COLORS ###
+# Aliases
+s () { scp $* billy@misfacio.com:/home/billy/sites/misfacio.com/$* ; }
+
+# Colors
 NONE="\[\033[0m\]"    # unsets color to term fg color
 # regular colors
 K="\[\033[0;30m\]"    # black
