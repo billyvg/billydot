@@ -1,3 +1,9 @@
+# Custom stuff
+source `brew --prefix git`/etc/bash_completion.d/git-completion.bash
+export PGDATA=/usr/local/var/postgres
+export PATH=$PATH:/usr/local/Cellar/python/2.7.1/bin:/usr/local/sbin
+export NODE_PATH=/usr/local/lib/node
+
 # Aliases
 
 # Quick scp alias to my webhost
@@ -52,17 +58,19 @@ prompt_venv() {
 # display VCS info, requires vcprompt
 prompt_vcs_info() {
     unset VCS_INFO
+    if [ `vcprompt` ]
+    then
+        local vcs=`vcprompt -f "%n"`
+        local branch=`vcprompt -f "%b"`
+        local rev=`vcprompt -f "%r"`
+        local uncommited=`vcprompt -f "%m"`
 
-    local vcs=`vcprompt -f "%n"`
-    local branch=`vcprompt -f "%b"`
-    local rev=`vcprompt -f "%r"`
-    local uncommited=`vcprompt -f "%m"`
-
-    VCS_INFO=" ${EMM}$vcs:${C}$rev ${EMM}branch:${C}$branch${EMR}$uncommited"
+        VCS_INFO=" ${EMM}$vcs:${C}$rev ${EMM}branch:${C}$branch${EMR}$uncommited"
+    fi
 }
 
 update_prompt() {
-    if [ `vcprompt` ]
+    if vcprompt &>/dev/null
     then 
         prompt_vcs_info
         prompt_venv
