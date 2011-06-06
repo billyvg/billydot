@@ -1,4 +1,6 @@
 # Aliases
+
+# Quick scp alias to my webhost
 s () { scp $* billy@misfacio.com:/home/billy/sites/misfacio.com/$* ; }
 
 # Colors
