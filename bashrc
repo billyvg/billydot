@@ -1,8 +1,4 @@
 # Custom stuff
-source `brew --prefix git`/etc/bash_completion.d/git-completion.bash
-export PGDATA=/usr/local/var/postgres
-export PATH=$PATH:/usr/local/Cellar/python/2.7.1/bin:/usr/local/sbin
-export NODE_PATH=/usr/local/lib/node
 
 # Aliases
 
